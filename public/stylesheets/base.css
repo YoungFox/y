@@ -1,0 +1,25 @@
+.fr{float:right;}
+.gh{height: 82px;margin-bottom: 30px;background:#1B1B1B;}
+.contentWrap{background:#DCEAF4;color:#8F8F8F;}
+.loginBt{color:#8F8F8F;}
+	/*url('../images/contentWrap1.png');}*/
+div .headP{height:64px;width:64px;margin-left:16px;border-radius: 3px;}
+div .article{background:#fff;border-radius: 3px;}
+.avatar{display:block;width:64px;height:64px;text-indent: -9999px;background:url('../img/avatar.jpg');border-radius: 3px;}
+.artTitle{padding:15px 20px 10px;color: #8f8f8f;width:500px;}
+.artC{padding:0 20px 20px;width:500px;}
+div .tagR{float:right;}
+.tagBt{margin-right:10px;}
+.tagLing{padding:2px 4px;}
+.reBts{padding:20px 35px 20px 35px;width:250px;}
+.reBts1{border-radius: 3px;}
+.reBts button{padding:11px 25px;width:120px;font-weight:bold;}
+.pLeft{float:left;}
+.pRight{float:right;}
+.introT{font-size: 20px;font-weight: bold;}
+.introTitle{width: 248px;padding:4px 0;}
+.intro{width:250px;margin:0;background: #fff;border-radius: 4px;}
+.intro p{margin:10px 10px 0;}
+.intro ul{margin:0;}
+.regBt{background: #0088CC;}
+.logo{display:block;height:82px;width:137px;background: url('../img/logo.png');}

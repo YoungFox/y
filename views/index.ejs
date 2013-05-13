@@ -5,23 +5,35 @@
     <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.css' />
     <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
     <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel="stylesheet" href="stylesheets/themes/default.css" type="text/css" media="screen" /> 
+    <link rel="stylesheet" href="stylesheets/nivo-slider.css" type="text/css" media="screen" />
   </head>
   <body>
+
   	<div class='contentWrap'>
 		  <div class="row-fluid">
 		  	<div class="span12 gh">
-		  		<div class="container "><a class='logo'></a></div>
+		  		<div class="container "><a class='logo'></a>
+	  			  	<ul class="nav nav-tabs contentTabs" id="myTab">
+						  <li class="active"><a href="#home">浏览</a></li>
+						  <li><a href="#profile">精选</a></li>
+						  <li><a href="#messages">发现</a></li>
+					 <!--  <li><a href="#settings"></a></li> -->
+					</ul>
+		  		</div>
 		  	</div>
 		  </div>
 		  <div class="container ">
-		   	<div class="row">
+		  	<div class="tab-content">
+			  <div class="tab-pane active" id="home">
+			  	<div class="row">
 				  <div class="span8">
 				  	<div class="row">
 				  		<div class="span1 headP"><a class="avatar">头像</a></div>
 				  		<div class="span7 article">
 				  			<div class="row">
 				  				<div class="span7 artTitle">我是博客的题目</div>
-				  				<div class="span7 artC"><img width='500' height='750' src='img/testC.jpg'></div>
+				  				<div class="span7 artC"><img width='500' height='750' src='<!-- img/testC.jpg -->'></div>
 				  				<div class="span7 artC"><img width='500' height='333' src='img/testC1.jpg'></div>
 				  				<div class="span7 artC"><img width='250' height='167' src='img/testC2.jpg'><img width='250' height='167' src='img/testC2.jpg'></div>
 				  				<div class="span7 artC"><img width='500' height='750' src='img/testC3.jpg'></div>
@@ -71,8 +83,118 @@
 				  		</div>
 				  	</div>
 				  </div>
+				</div>
+			  </div>
+			  <div class="tab-pane" id="profile">
+			  	  <div class="slider-wrapper theme-default">
+				            <div id="slider" class="nivoSlider">
+					                <img src="img/toystory.jpg" data-thumb="img/toystory.jpg" alt="" />
+					                <img src="img/up.jpg" data-thumb="img/up.jpg" alt="" />
+					                <img src="img/walle.jpg" data-thumb="img/walle.jpg" alt="" data-transition="slideInLeft" />
+					                <img src="img/nemo.jpg" data-thumb="img/nemo.jpg" alt="" title="#htmlcaption" />
+				            </div>
+				            <div id="htmlcaption" class="nivo-html-caption">
+				                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+				            </div>
+				        </div>
+
+			  	<div class="winUiContent ">
+					  <div class="col">
+					  	<div class='size2 p01'></div>
+					  	<div class='size1 p02'></div>
+					  	<div class='size1 p04'></div>
+					  	<div class='size3 p05'></div>
+					  </div>
+					  <div class="col col0">
+					  	<div class='size3 p01'></div>
+					  	<div class='size1 p03'></div>
+					  	<div class='size1 p04'></div>
+					  	<div class='size3 p05'></div>
+					  </div>
+					  <div class="col">
+					  	<div class='size3 p01'></div>
+					  	<div class='size2 p03'></div>
+					  	<div class='size1 p04'></div>
+					  	<div class='size1 p06'></div>
+					  </div>
+				</div>
+			  </div>
+			  <div class="tab-pane" id="messages">
+			  	<div class="row">
+				  <div class="span8">
+				  	<div class="row">
+				  		<div class="span1 headP"><a class="avatar">头像</a></div>
+				  		<div class="span7 article">
+				  			<div class="row">
+				  				<div class="span7 artTitle">我是博客的题目</div>
+				  				<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC.jpg'></div>
+				  				<div class="span7 artC"><img width='500' height='333' src='img/testC1.jpg'></div> -->
+				  				<div class="span7 artC"><img width='250' height='167' src='img/testC2.jpg'><img width='250' height='167' src='img/testC2.jpg'></div>
+				  				<div class="span7 artC"><img width='500' height='750' src='img/testC3.jpg'></div>
+				  				<div class="span7 artC"><img width='500' height='750' src='img/testC4.jpg'></div>
+				  				<div class="span7 artC">
+				  					<div class="row">
+				  						<div class="span3"><button class="btn btn-info btn-small tagBt" type="button">#时尚</button><button class="btn btn-info btn-small tagBt" type="button">#模特</button><button class="btn btn-link btn-small tagBt" type="button">#模特</button></div>
+				  						<div class="span2 tagR">
+				  							<a class="btn btn-link btn-small tagLing">热度</a>
+				  							<a class="btn btn-link btn-small tagLing">回应</a>
+				  							<a class="btn btn-link btn-small tagLing">转载</a>
+				  							<a class="btn btn-link btn-small tagLing"><i class="icon-heart"></i></a>
+				  							
+				  						</div>
+				  					</div>
+				  				</div>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </div>
+				  <div class="span4">
+				  	<div class="row">
+				  		<div class="span4 reBts reBts1">
+				  			<button class="loginBt btn btn-large pLeft" type="button">登录</button>
+				  			<button class="regBt btn btn-info  btn-large pRight" type="button">注册</button>
+				  		</div>
+				  		<div class="span4 reBts">
+				  				<div class="span4 intro introT"><a class="btn  disabled btn-block">Yblog简介</a></div>
+				  				<div class="span3 intro">
+				  					<p>Yblog是基于node.js的轻博客系统</p>
+				  					<p>测试性产品，目前处于开发阶段</p>
+				  					<p>涉及的主要技术如下所示</p>
+				  					<a class="btn btn-link btn-small tagLing fr">by 杨文梁</a>
+				  				</div>
+				  		</div>
+				  		<div class="span4 reBts">
+				  			<div class="span4 intro">
+				  				    <ul class="nav nav-tabs nav-stacked tagList">  
+									    <li><a href="#">javascript</a></li>
+									    <li><a href="#">Node.js</a></li>
+									    <li><a href="#">express</a></li>
+									    <li><a href="#">jQuery</a></li>
+									    <li><a href="#">MongoDB</a></li>
+									    <li><a href="#">Bootstrap</a></li>
+								    </ul>
+				  			</div>
+				  		</div>
+				  	</div>
+				  </div>
+				</div>
+
+			  </div>
+			 <!--  <div class="tab-pane" id="settings">.4.</div> -->
 			</div>
+			 
+		   	
 		  </div>
 	</div>
+	<script type='text/javascript' src='javascripts/jquery-1.8.3.js'></script>
+	<script type='text/javascript' src='javascripts/bootstrap.js'></script>
+	<script type="text/javascript" src="javascripts/jquery.nivo.slider.js"></script>
+	<script>
+	 $('#slider').nivoSlider();
+	  $('#myTab a').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	})
+	</script>
   </body>
 </html>

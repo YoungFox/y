@@ -88,10 +88,10 @@
 			  <div class="tab-pane" id="profile">
 			  	  <div class="slider-wrapper theme-default">
 				            <div id="slider" class="nivoSlider">
-					                <img src="img/toystory.jpg" data-thumb="img/toystory.jpg" alt="" />
-					                <img src="img/up.jpg" data-thumb="img/up.jpg" alt="" />
-					                <img src="img/walle.jpg" data-thumb="img/walle.jpg" alt="" data-transition="slideInLeft" />
-					                <img src="img/nemo.jpg" data-thumb="img/nemo.jpg" alt="" title="#htmlcaption" />
+					                <img src="img/001.png" data-thumb="img/toystory.jpg" alt="" />
+					                <img src="img/002.png" data-thumb="img/up.jpg" alt="" />
+					                <img src="img/003.png" data-thumb="img/walle.jpg" alt="" data-transition="slideInLeft" />
+					                <img src="img/004.png" data-thumb="img/nemo.jpg" alt="" title="#htmlcaption" />
 				            </div>
 				            <div id="htmlcaption" class="nivo-html-caption">
 				                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
@@ -190,7 +190,9 @@
 	<script type='text/javascript' src='javascripts/bootstrap.js'></script>
 	<script type="text/javascript" src="javascripts/jquery.nivo.slider.js"></script>
 	<script>
-	 $('#slider').nivoSlider();
+	 $('#slider').nivoSlider({
+	 	effect: 'random'
+	 });
 	  $('#myTab a').click(function (e) {
 	  e.preventDefault();
 	  $(this).tab('show');

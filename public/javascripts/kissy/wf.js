@@ -1,6 +1,4 @@
-﻿
-function iniWaterfall(){
-KISSY.use("waterfall,io,node,button", function (S, Waterfall, io,  Node, Button) {
+﻿function iniWaterfall(){KISSY.use("waterfall,ajax,node,button", function (S, Waterfall, io,  Node, Button) {
     var $ = Node.all;
 
     var tpl = ($('#tpl').html()),
@@ -12,13 +10,12 @@ KISSY.use("waterfall,io,node,button", function (S, Waterfall, io,  Node, Button)
                 easing:"easeInStrong"
             },
             load:function (success, end) {
-                // alert(nextpage);
                 $('#loadingPins').show();
-                S.io({
+                S.ajax({
                     data:{
                         'method':'flickr.photos.search',
                         'api_key':'5d93c2e473e39e9307e86d4a01381266',
-                        'tags':'moon',
+                        'tags':'rose',
                         'page':nextpage,
                         'per_page':20,
                         'format':'json'
@@ -42,7 +39,7 @@ KISSY.use("waterfall,io,node,button", function (S, Waterfall, io,  Node, Button)
                         // 拼装每页数据
                         var items = [];
                         S.each(d['photos']['photo'], function (item) {
-                            item.height = Math.round(Math.random() * (900 - 180) + 180); // fake height
+                            item.height = Math.round(Math.random() * (300 - 180) + 180); // fake height
                             items.push(S.substitute(tpl,item));
                         });
                         success(items);

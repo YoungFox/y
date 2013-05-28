@@ -1,3 +1,4 @@
+
 .clearFix:after{
 	content:".";
 	height:0;
@@ -13,7 +14,8 @@
 div .headP{height:64px;width:64px;margin-left:16px;border-radius: 3px;}
 div .article{background:#fff;border-radius: 3px;}
 .avatar{display:block;width:64px;height:64px;text-indent: -9999px;background:url('../img/avatar.jpg');border-radius: 3px;}
-.artTitle{padding:15px 20px 10px;color: #8f8f8f;width:500px;}
+.artUser{padding:15px 20px 10px;color: #b4b4b4;width:500px;font-size: 12px;}
+.artTitle{padding:10px 20px;color: #444;width:500px;font-size: 22px;}
 .artC{padding:0 20px 20px;width:500px;}
 div .tagR{float:right;}
 .tagBt{margin-right:10px;}
@@ -46,4 +48,12 @@ div .tagR{float:right;}
 .p06{left:160px;top:320px;}
 #profile{overflow: hidden;}
 #slider{height:529px;width:940px;}
-
+.tab-content{overflow: visible;}
+.arti{margin-bottom:40px;}
+.user{height:62px;margin-top:20px;line-height:62px;display: block;float:left;}
+#myTab .floatRight{float:right;}
+#myTab{width:700px;}
+#userHomeTag{color:#fff;}
+#userHomeTag:hover,#userHomeTag:focus, .active #userHomeTag{
+	color:#6666FF;
+}

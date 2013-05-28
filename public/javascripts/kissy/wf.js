@@ -39,7 +39,7 @@
                         // 拼装每页数据
                         var items = [];
                         S.each(d['photos']['photo'], function (item) {
-                            item.height = Math.round(Math.random() * (300 - 180) + 180); // fake height
+                            item.height = Math.round(Math.random() * (250 - 180) + 180); // fake height
                             items.push(S.substitute(tpl,item));
                         });
                         success(items);

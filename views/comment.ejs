@@ -1,11 +1,15 @@
+<fieldset>
+    <legend>回复</legend>
+    <div class='publish'>
 <br />
 <% post.comments.forEach(function(comment, index){ %>
-  <p><a href="<%= comment.website %>"><%= comment.name %></a>
-  <span class="info"> 回复于 <%= comment.time %></span></p>
-  <p><%- comment.content %></p>
+<div class="commentWrap">
+  <p class="clearFix commentTitle"><img src="<%= comment.head %>" class="l_head" /><a style="margin-left:1em;" href="<%= comment.website %>"><%= comment.name %></a><span class="info"> 回复于 <%= comment.time %></span></p>
+  <div class='commentContent'><%- comment.content %></div>
+</div>
 <% }) %>
 
-<form method="post">
+<form method="post" >
 <% if(locals.user){ %>
   姓名：<input type="text" name="name" value="<%= locals.user.name %>" /><br />
   邮箱：<input type="text" name="email" value="<%= locals.user.email %>" /><br />
@@ -16,5 +20,7 @@
   网址：<input type="text" name="website" value="http://" /><br />
 <% } %>
   <textarea id="content" name="content" rows="5" cols="80"></textarea><br />
-  <input type="submit" value="留言" />
+  <input type="submit" class="btn btn-primary" value="留言" />
 </form>
+</div>
+</fieldset>

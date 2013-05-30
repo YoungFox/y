@@ -123,9 +123,12 @@ module.exports = function(app){
   app.post('/post',checkLogin);
   app.post('/post', function(req, res){
   var currentUser = req.session.user,
-    tags = [{"tag":req.body.tag1},{"tag":req.body.tag2},{"tag":req.body.tag3}],
-    post = new Post(currentUser.name, req.body.title, tags, req.body.post);
-      console.log(currentUser.name);
+    tags = [{"tag":req.body.tag1},{"tag":req.body.tag2},{"tag":req.body.tag3}];
+    var md5 = crypto.createHash('md5'),
+    email_MD5 = md5.update(currentUser.email.toLowerCase()).digest('hex'),
+    head = "http://www.gravatar.com/avatar/" + email_MD5 + "?s=64",
+    post = new Post(currentUser.name, head, req.body.title, tags, req.body.post);
+      // console.log(currentUser.name);
   post.save(function(err){
     if(err){
       req.flash('error', err); 
@@ -235,18 +238,37 @@ app.get('/u/:name/:day/:title', function(req,res){
   });
 });
 
+app.get('/search', function(req,res){
+  Post.search(req.query.keyword, function(err, posts){
+    if(err){
+      req.flash('error',err); 
+      return res.redirect('/');
+    }
+    res.render('search',{
+      title: "SEARCH:"+req.query.keyword,
+      posts: posts,
+      user: req.session.user,
+      success: req.flash('success').toString(),
+      error: req.flash('error').toString()
+    });
+  });
+});
 
 app.post('/u/:name/:day/:title', function(req,res){
   var date = new Date(),
-      time = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes(),
-      comment = {"name":req.body.name, "email":req.body.email, "website":req.body.website, "time":time, "content":req.body.content};
+      time = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes();
+  var md5 = crypto.createHash('md5'),
+      email_MD5 = md5.update(req.body.email.toLowerCase()).digest('hex'),
+      head = "http://www.gravatar.com/avatar/" + email_MD5 + "?s=64"; 
+  var comment = {"name":req.body.name, "head":head, "email":req.body.email, "website":req.body.website, "time":time, "content":req.body.content};
   var newComment = new Comment(req.params.name, req.params.day, req.params.title, comment);
+  // console.log(comment)
   newComment.save(function(err){
     if(err){
       req.flash('error',err); 
       return res.redirect('/');
     }
-    req.flash('success', '留言成功!');
+    req.flash('success', '评论成功!');
     res.redirect('back');
   });
 });

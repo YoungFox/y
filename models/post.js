@@ -1,8 +1,9 @@
 var mongodb = require('./db'),
 markdown = require('markdown').markdown;;
 
-function Post(name, title, tags, post) {
+function Post(name, head, title, tags, post) {
   this.name = name;
+  this.head = head;
   this.title = title;
   this.tags = tags;
   this.post = post;
@@ -23,6 +24,7 @@ Post.prototype.save = function(callback) {//存储一篇文章及其相关信息
   //要存入数据库的文档
 var post = {
     name: this.name,
+    head: this.head,
     time: time,
     title:this.title,
     tags: this.tags,
@@ -149,6 +151,30 @@ Post.getTag = function(tag, callback) {//返回含有特定标签的所有文章
         mongodb.close();
         if (err) {
           callback(err, null);
+        }
+        callback(null, docs);
+      });
+    });
+  });
+};
+
+Post.search = function(keyword, callback) {//返回通过标题关键字查询的所有文章
+  mongodb.open(function (err, db) {
+    if (err) {
+      return callback(err);
+    }
+    db.collection('posts', function(err, collection) {
+      if (err) {
+        mongodb.close();
+        return callback(err);
+      }
+      var pattern = new RegExp("^.*"+keyword+".*$", "i");
+      collection.find({"title":pattern},{"name":1,"time":1,"title":1}).sort({
+        time:-1
+      }).toArray(function(err, docs){
+        mongodb.close();
+         if (err) {
+         callback(err, null);
         }
         callback(null, docs);
       });

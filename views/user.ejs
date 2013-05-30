@@ -1,4 +1,7 @@
 <%- include header %>
+<fieldset>
+    <legend><a href="/">主页</a>/文章列表</legend>
+    <div class='publish'>
 <% posts.forEach(function(post, index){ %>
   <p><h2><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></h2></p>
   <p class="info">
@@ -8,4 +11,6 @@
   <p><%- post.post %></p>
   <p class="info">阅读：<%= post.pv %> | 评论：<%= post.comments.length %></p>
 <% }) %>
+</div>
+</fieldset>
 <%- include footer %>

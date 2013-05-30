@@ -46,7 +46,7 @@
 		  	<div class="tab-content" >
 
 		  	 <div class="tab-pane" id="userhome">
-			  	<div class="row" >
+			  	<div class="row cont" >
 				  <div class="span8">
 				  
 
@@ -59,18 +59,18 @@
 			  </div>
 
 			  <div class="tab-pane active" id="home">
-			  	<div class="row" >
-				  <div class="span8">
+			  	<div class="row cont" >
+				  <div class="span8 cont">
 
 				  	<% posts.forEach(function(post, index){ %>
 				  		
-					  	<div class="row arti">
-					  		<div class="span1 headP"><a class="avatar"  href="/u">头像</a></div>
+					  	<div class="row arti cont">
+					  		<div class="span1 headP"><a class="avatar" href="/u/<%= post.name %>"><img src="<%= post.head %>" class="" /></a></div>
 					  		<div class="span7 article">
 					  			
 						  			<div class="row">
 						  				<div class="span7 artUser"><%= post.name %></div>
-						  				<div class="span7 artTitle"><%= post.title %></div>
+						  				<div class="span7 artTitle"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></div>
 						  				<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC.jpg'></div>  -->
 						  				<div class="span7 artC"><%-post.post %></div>
 						  				<div class="span7 artC"><img width='500' height='333' src='img/testC1.jpg'></div>
@@ -89,11 +89,10 @@
 
 						  						</div>
 						  						<div class="span2 tagR">
-						  							<a class="btn btn-link btn-small tagLing">热度</a>
-						  							<a class="btn btn-link btn-small tagLing">回应</a>
-						  							<a class="btn btn-link btn-small tagLing">转载</a>
-						  							<a class="btn btn-link btn-small tagLing"><i class="icon-heart"></i></a>
-						  							
+						  							<a class="btn btn-link btn-small tagLing artcleBt"><i class="icon-heart"></i></a>
+						  							<a class="btn btn-link btn-small tagLing artcleBt">转载</a>
+						  							<a class="btn btn-link btn-small tagLing artcleBt">回应(<%= post.comments.length %>)</a>
+						  							<a class="btn btn-link btn-small tagLing artcleBt">热度(<%= post.pv %>)</a>
 						  						</div>
 						  					</div>
 						  				</div>
@@ -115,6 +114,14 @@
 				  			<a href='/reg' class="regBt btn btn-info  btn-large pRight bts" type="button">注册</a>
 				  			<% } %>
 				  		</div>
+				  		<div class="span4 reBts2 searchInput">
+					  		<form class="form-search" action='/search' method='GET'>
+								  <div class="input-append">
+								    <input type="text" class="span2 search-query" name='keyword' >
+								    <button type="submit" class="btn">Search</button>
+								  </div>
+							</form>
+						</div>
 				  		<div class="span4 reBts">
 				  				<div class="span4 intro introT"><a class="btn  disabled btn-block">Yblog简介</a></div>
 				  				<div class="span3 intro">
@@ -136,10 +143,17 @@
 									    <li><a href="#">MongoDB</a></li>
 									    <li><a href="#">Bootstrap</a></li>
 									    <li><a href="#">Markdown</a></li>
+									    <li><a href="#">gravatar</a></li>
 								    </ul>
 
-
 				  			</div>
+				  		</div>
+
+				  		<div class="span4 reBts">
+				  			<ul>
+							  <li><h3><a href="http://vscs.cri.cn">南海之声</a></h3>南海之声</li>
+							  <li><h3><a href="http://gb.cri.cn">国际在线</a></h3>国际在线</li>
+							</ul>
 				  		</div>
 				  		<div class="span4 reBts">
 				  		  <span><a title="存档" href="/archive">archive</a></span>

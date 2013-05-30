@@ -1,11 +1,16 @@
 <%-include header %>
-<form method="post">
-  标题：<br />
-  <input type="text" name="title" /><br />
-  标签：<br />
-<input type="text" name="tag1" /><input type="text" name="tag2" /><input type="text" name="tag3" /><br />
-  正文：<br />
-  <textarea name="post" rows="20" cols="100"></textarea><br />
-  <input type="submit" value="发表" />
-</form>
+<fieldset>
+    <legend><a href="/">主页</a>/发表</legend>
+    <div class='publish'>
+	<form method="post">
+	  标题：<br />
+	  <input type="text" class='articleContent' name="title"  placeholder="请在此输入标题，字数控制100之内"  /><br />
+	  标签：<br />
+	<input type="text" name="tag1" class='artTag' /><input type="text" name="tag2" class='artTag'  /><input type="text" name="tag3" class='artTag'  /><br />
+	  正文：<br />
+	  <textarea name="post" " class='articleContent' ></textarea><br />
+	  <input type="submit" class="btn btn-primary" value="发表" />
+	</form>
+</div>
+<fieldset>
 <%-include footer %>

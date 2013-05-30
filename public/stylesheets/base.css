@@ -17,7 +17,7 @@ div .article{background:#fff;border-radius: 3px;}
 .artUser{padding:15px 20px 10px;color: #b4b4b4;width:500px;font-size: 12px;}
 .artTitle{padding:10px 20px;color: #444;width:500px;font-size: 22px;}
 .artC{padding:0 20px 20px;width:500px;}
-div .tagR{float:right;}
+div .tagR{float:right;width:150px;}
 .tagBt{margin-right:10px;}
 .tagLing{padding:2px 4px;}
 .reBts{padding:20px 35px 20px 35px;width:250px;}
@@ -57,3 +57,15 @@ div .tagR{float:right;}
 #userHomeTag:hover,#userHomeTag:focus, .active #userHomeTag{
 	color:#6666FF;
 }
+
+.lastpage a{float:left;text-decoration:none;padding:.5em 1em;color:#ff0000;font-weight:bold;}
+.nextpage a{float:right;text-decoration:none;padding:.5em 1em;color:#ff0000;font-weight:bold;}
+.lastpage a:hover,.nextpage a:hover{text-decoration:none;background-color:#ff0000;color:#f9f9f9;-webkit-transition:color .2s linear;}
+
+.archive{list-style:none;line-height:28px;}
+.archive h3{margin:0.5em 0;}
+.archive time{float:left;font-size:14px;color:#999999;margin-right:1.2em;}
+.tag{background-color:#ff0000;border-radius:3px;font-size:14px;color:#ffffff;display:inline-block;padding:0 5px;margin-bottom:8px;}
+.tag:hover{text-decoration:none;background-color:#ffffff;color:#000000;-webkit-transition:color .2s linear;}
+
+a.bts{padding:11px 40px;;}

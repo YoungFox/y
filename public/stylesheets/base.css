@@ -11,6 +11,7 @@ input, textarea, .uneditable-input {
     width: auto;
 }
 .fr{float:right;}
+.globalHeader{height:112px;}
 .gh{height: 82px;margin-bottom: 30px;background:#022540;}
 .contentWrap{background:#DCEAF4;color:#8F8F8F;}
 .loginBt{color:#8F8F8F;}
@@ -79,7 +80,7 @@ a.bts{padding:11px 40px;}
 .l_head{float:left;box-shadow:0px 1px 4px #888; border-radius: 10px 10px 10px 10px;box-shadow: 0 0 6px rgba(136, 78, 78, 0.5);width:48px;height:48px;}
 .r_head{float:right;margin-top:-2.5em;box-shadow:0px 1px 4px #888;}
 .conPanel,.oprPanel{float:left;}
-.conPanel{width:620px;background: #fff;}
+.conPanel{width:620px;background: #fff;min-height:400px;}
 .oprPanel{width:320px;}
 legend{font-size:14px;background: #ccc;text-indent: 1em;}
 .help-block{color:#ccc;font-size: 12px;}
@@ -92,3 +93,5 @@ textarea.articleContent{height:200px;}
 .commentTitle{height:48px;line-height: 48px;}
 .commentWrap{margin-right:20px;margin-bottom:20px;border-bottom:1px dotted #ccc;}
 .searchInput{text-align: center;}
+.tagsWrap{margin:20px;}
+.pageShift{float:right;font-size:12px;}

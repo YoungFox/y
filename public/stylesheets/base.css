@@ -32,7 +32,7 @@ div .tagR a{float:right;}
 .reBts1{border-radius: 3px;}
 .reBts button{padding:11px 25px;width:120px;font-weight:bold;}
 .pLeft{float:left;}
-.pRight{float:right;}
+.pRight{margin-left:14px;}
 .introT{font-size: 20px;font-weight: bold;}
 .introTitle{width: 248px;padding:4px 0;}
 .intro{width:250px;margin:0;background: #fff;border-radius: 4px;}
@@ -93,5 +93,12 @@ textarea.articleContent{height:200px;}
 .commentTitle{height:48px;line-height: 48px;}
 .commentWrap{margin-right:20px;margin-bottom:20px;border-bottom:1px dotted #ccc;}
 .searchInput{text-align: center;}
+.friLink ul,.friLink li{list-style:none;}
+.friLink li{margin-top:10px;float:left;width:100px;height:62px;}
+.friLink ul{margin-left:0px;}
+li.rightLink{margin-left:50px;}
+.friLink  p{text-align:center;}
+.friLink a img{display:block;}
+.friLink a{text-align:center;}
 .tagsWrap{margin:20px;}
 .pageShift{float:right;font-size:12px;}

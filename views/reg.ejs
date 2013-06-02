@@ -4,21 +4,21 @@
             <%= error %>
           </div>
  <% } %>
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" id="regForm">
   <fieldset>
     <legend><a href="/">主页</a>/注册</legend>
     <div class="control-group">
       <label class="control-label" for="username">用户名</label>
       <div class="controls">
         <input type="text" class="input-xlarge" id="username" name="username">
-        <p class="help-block">你的账户和名称，用于登录和显示。</p>
+        <p id='userErr' class="help-block">你的账户和名称，用于登录和显示。</p>
       </div>
       </div>
       <div class="control-group">
       <label class="control-label" for="email">邮箱</label>
       <div class="controls">
         <input type="text" class="input-xlarge" id="email" name="email">
-        <p class="help-block">你的常用邮箱</p>
+        <p class="help-block" id="mailErr">你的常用邮箱</p>
       </div>
     </div>
     <div class="control-group">
@@ -38,5 +38,21 @@
     </div>
   </fieldset>
 </form>
+<script type='text/javascript' src='javascripts/jquery-1.8.3.js'></script>
+<script type="text/javascript" src="javascripts/base.js"></script>
+<script type="text/javascript">
+    $(function (){
+      $('#username').on('blur',function (){
+      var nameStr = $(this).val();
+        if(checkName(nameStr)){$('#userErr').text('可以使用').css('color','#33CC33')}
+        else{$('#userErr').text('用户名有误！').css('color','#E64141')}    
+      })
+       $('#email').on('blur',function (){
+      var emailStr = $(this).val();
+        if(isEmail(emailStr)){$('#mailErr').text('可以使用').css('color','#33CC33')}
+        else{$('#mailErr').text('邮箱格式有误').css('color','#E64141')}    
+      })
+    })
+</script>
 
 <%-include footer %>

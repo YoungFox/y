@@ -3,4 +3,4 @@ http://g.hiphotos.baidu.com/album/w%3D1600%3Bq%3D90/sign=adf3bf77f636afc30e0c3b6
 
 
 openshift地址：https://firstapp-yangwl.rhcloud.com/
-			   https://yblog-yangwl.rhcloud.com/
+		https://yblog-yangwl.rhcloud.com/

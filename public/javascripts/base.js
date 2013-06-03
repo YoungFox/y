@@ -1,12 +1,12 @@
 
 //用户名校验
 function checkName(strName){
-	var reg=/^[a-z0-9_\u4e00-\u9fa5]{3,12}$/i;
+	var reg=/^[a-z0-9_\u4e00-\u9fa5]{2,12}$/i;
 	if(reg.test(strName)){
 		return true;
 		}
 		else{
-			return false;
+		return false;
 		}
 }
 

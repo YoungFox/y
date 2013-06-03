@@ -23,7 +23,7 @@
 	  			  		  <% if (locals.user) { %>
 	  			  		       <li><a id="userHomeTag" href="#userhome"><%= user.name%></a></li>
 						  <% } %>
-						  <li class="floatRight"><a href="#messages">发现</a></li>
+						  <li class="floatRight"><a href="#messages"><!-- 发现 -->瀑布</a></li>
 						  <li class="floatRight"><a href="#profile">精选</a></li>
 						  <li class="active floatRight"><a href="#home">浏览</a></li>
 						  
@@ -47,13 +47,48 @@
 
 		  	 <div class="tab-pane" id="userhome">
 			  	<div class="row cont" >
-				  <div class="span8">
-				  
-
-				  	
+				  <div class="span8 publishSection" >
+				  	<div class="publishBt">
+				  		<ul>
+				  			<li class='btList'><a class='' href='/post'><div class='pLink1'></div></a></li>
+				  			<li class='btList'><a class='' href=''><div class='pLink2'></div></a></li>
+				  			<li class='btList'><a class='' href=''><div class='pLink3'></div></a></li>
+				  			<li class='btList' style="border-right:none;"><a class='' href=''><div class='pLink4'></div></a></li>
+				  		</ul>
+				  	</div>
 				  </div>
 				  <div class="span4">
-				  	
+				  	<div class="row">
+				  		<div class="span4 reBts reBts1">
+				  			<% if(locals.user){ %>
+				  			<a href='/post' class="loginBt btn btn-large pLeft bts" >发表</a>
+				  			<a href='/logout' class="regBt btn btn-info  btn-large pRight bts" >退出</a>
+				  			<%}else{%>
+				  			<a class="loginBt btn btn-large pLeft bts"  href='/login' >登录</a>
+				  			<a href='/reg' class="regBt btn btn-info  btn-large pRight bts" type="button">注册</a>
+				  			<% } %>
+				  		</div>
+				  		<div class="span4 reBts2 searchInput">
+					  		<form class="form-search" action='/search' method='GET'>
+								  <div class="input-append">
+								    <input type="text" class="span2 search-query" name='keyword' >
+								    <button type="submit" class="btn">Search</button>
+								  </div>
+							</form>
+						</div>
+
+						<div class="span4 reBts">
+				  			<div class="span4 intro">
+				  				   <ul class="nav nav-tabs nav-stacked tagList">  
+				  				    	    <li><a title="存档" href="/archive">所有文章</a></li>
+				  				    	    <li><a title="标签" href="/tags">标签列表</a></li>
+									    
+								    </ul>
+
+				  			</div>
+				  		</div>
+				  		
+				  	</div>
 				  </div>
 				</div>
 			  </div>
@@ -69,14 +104,14 @@
 					  		<div class="span7 article">
 					  			
 						  			<div class="row">
-						  				<div class="span7 artUser"><%= post.name %></div>
+						  				<div class="span7 artUser"><a  href="/u/<%= post.name %>"><%= post.name %></a></div>
 						  				<div class="span7 artTitle"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></div>
 						  				<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC.jpg'></div>  -->
 						  				<div class="span7 artC"><%-post.post %></div>
-						  				<div class="span7 artC"><img width='500' height='333' src='img/testC1.jpg'></div>
-						  				<div class="span7 artC"><img width='250' height='167' src='img/testC2.jpg'><img width='250' height='167' src='img/testC2.jpg'></div>
+						  				<!-- <div class="span7 artC"><img width='500' height='333' src='img/testC1.jpg'></div>
+						  				<div class="span7 artC"><img width='250' height='167' src='img/testC2.jpg'><img width='250' height='167' src='img/testC2.jpg'></div> -->
 						  				<div class="span7 artC"><img width='500' height='750' src='img/testC3.jpg'></div>
-						  				<div class="span7 artC"><img width='500' height='750' src='img/testC4.jpg'></div>
+						  				<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC4.jpg'></div> -->
 						  				<div class="span7 artC">
 						  					<div class="row">
 						  						<div class="span3">
@@ -91,7 +126,7 @@
 						  						<div class="span2 tagR">
 						  							<a class="btn btn-link btn-small tagLing artcleBt"><i class="icon-heart"></i></a>
 						  							<a class="btn btn-link btn-small tagLing artcleBt">转载</a>
-						  							<a class="btn btn-link btn-small tagLing artcleBt">回应(<%= post.comments.length %>)</a>
+						  							<a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>" class="btn btn-link btn-small tagLing artcleBt">回应(<%= post.comments.length %>)</a>
 						  							<a class="btn btn-link btn-small tagLing artcleBt">热度(<%= post.pv %>)</a>
 						  						</div>
 						  					</div>
@@ -133,33 +168,30 @@
 				  		</div>
 				  		<div class="span4 reBts">
 				  			<div class="span4 intro">
-				  				    <ul class="nav nav-tabs nav-stacked tagList">  
-				  				    	    <li><a href="#">HTML</a></li>
-				  				    	    <li><a href="#">CSS</a></li>
-									    <li><a href="#">javascript</a></li>
-									    <li><a href="#">Node.js</a></li>
-									    <li><a href="#">express</a></li>
-									    <li><a href="#">jQuery</a></li>
-									    <li><a href="#">MongoDB</a></li>
-									    <li><a href="#">Bootstrap</a></li>
-									    <li><a href="#">Markdown</a></li>
-									    <li><a href="#">gravatar</a></li>
+				  				   <ul class="nav nav-tabs nav-stacked tagList">  
+				  				    	    <li><a target="_blank" href="http://www.w3school.com.cn/">HTML</a></li>
+				  				    	    <li><a target="_blank" href="http://www.w3school.com.cn/">CSS</a></li>
+									    <li><a target="_blank" href="http://www.w3school.com.cn/">javascript</a></li>
+									    <li><a target="_blank" href="http://nodejs.org/">Node.js</a></li>
+									    <li><a target="_blank" href="http://expressjs.com/">express</a></li>
+									    <li><a target="_blank" href="http://jquery.com/">jQuery</a></li>
+									    <li><a target="_blank" href="http://mongodb.github.io/node-mongodb-native/">MongoDB</a></li>
+									    <li><a target="_blank" href="http://twitter.github.io/bootstrap/">Bootstrap</a></li>
+									    <li><a target="_blank" href="http://www.ituring.com.cn/article/23">Markdown</a></li>
+									    <li><a target="_blank" href="http://en.gravatar.com/">gravatar</a></li>
 								    </ul>
 
 				  			</div>
 				  		</div>
-
+				  		
 				  			<div class="span4 reBts friLink">
 							<p>友情链接</p>
 				  			<ul class="clearFix">
 							  <li><a href="http://vscs.cri.cn"><img width="100" src='img/crilogo.gif' /><p>国际在线</p></a></li>
 							  <li class='rightLink'><a href="http://vscs.cri.cn"><img width="100" src='img/vscslogo.png' /><p>南海之声</p></a></li>
 							</ul>
-				  		</div>
-				  		<div class="span4 reBts">
-				  		  <span><a title="存档" href="/archive">archive</a></span>
-				  		  <span><a title="标签" href="/tags">tags</a></span>
-				  		</div>
+				  			</div>
+				  		
 				  	</div>
 				  </div>
 				</div>
@@ -179,32 +211,32 @@
 
 			  	<div class="winUiContent ">
 					  <div class="col">
-					  	<div class='size2 p01'></div>
-					  	<div class='size1 p02'></div>
-					  	<div class='size1 p04'></div>
-					  	<div class='size3 p05'></div>
+					  	<div class='size2 p01'><a href="###"><img src="/tmp/001.jpeg" /></a></div>
+					  	<div class='size1 p02'><a href="###"><img src="/tmp/3.jpeg" /></a>    </div>
+					  	<div class='size1 p04'><a href="###"><img src="/tmp/2.jpeg" /></a>    </div>
+					  	<div class='size3 p05'><a href="###"><img src="/tmp/01.jpeg" /></a>  </div>
 					  </div>
 					  <div class="col col0">
-					  	<div class='size3 p01'></div>
-					  	<div class='size1 p03'></div>
-					  	<div class='size1 p04'></div>
-					  	<div class='size3 p05'></div>
+					  	<div class='size3 p01'><a href="###"><img src="/tmp/02.jpeg" /></a></div>
+					  	<div class='size1 p03'><a href="###"><img src="/tmp/6.jpeg" /></a>   </div>
+					  	<div class='size1 p04'><a href="###"><img src="/tmp/1.jpeg" /></a>   </div>
+					  	<div class='size3 p05'><a href="###"><img src="/tmp/04.jpeg" /></a> </div>
 					  </div>
 					  <div class="col">
-					  	<div class='size3 p01'></div>
-					  	<div class='size2 p03'></div>
-					  	<div class='size1 p04'></div>
-					  	<div class='size1 p06'></div>
+					  	<div class='size3 p01'><a href="###"><img src="/tmp/03.jpeg" /></a></div>
+					  	<div class='size2 p03'>  </div>
+					  	<div class='size1 p04'><a href="###"><img src="/tmp/8.jpg" /></a>   </div>
+					  	<div class='size1 p06'><a href="###"><img src="/tmp/9.jpg" /></a> </div>
 					  </div>
 				</div>
 			  </div>
 			  <div class="tab-pane" id="messages">
 							 <div id="wrapper">
-						<div id="button_container"></div>
+						<!-- <div id="button_container"></div> -->
 
 						<div id="article">
 							<div id="ColumnContainer"></div>
-							<a id="BackToTop" href="#">Scroll to Top</a>
+							<a id="BackToTop" href="#">返回顶部</a>
 							<div id="loadingPins"><img src="img/T1Ar9xXg0JXXXXXXXX-16-16.gif" alt="Pin Loader Image"/><span>加载中&hellip;</span></div>
 						</div>
 					</div>

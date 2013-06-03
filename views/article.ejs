@@ -1,4 +1,14 @@
 <%- include header %>
+<% if (locals.success) { %>
+			       <div class="alert alert-success">
+			          <%= success %>
+			       </div>
+			<% } %>
+			<% if (locals.error) { %>
+			          <div class="alert alert-error">
+			            <%= error %>
+			          </div>
+			 <% } %>
 <fieldset>
     <legend><a href="/">主页</a>/文章</legend>
     <div class='publish'>

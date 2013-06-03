@@ -15,8 +15,8 @@
   邮箱：<input type="text" name="email" value="<%= locals.user.email %>" /><br />
   网址：<input type="text" name="website" value="/u/<%= locals.user.name %>" /><br />
 <% } else { %>
-  姓名：<input type="text" name="name" /><br />
-  邮箱：<input type="text" name="email" /><br />
+  姓名：<input type="text" name="name" value='匿名' /><br />
+  邮箱：<input type="text" name="email"  /><br />
   网址：<input type="text" name="website" value="http://" /><br />
 <% } %>
   <textarea id="content" name="content" rows="5" cols="80"></textarea><br />

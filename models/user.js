@@ -38,9 +38,7 @@ User.prototype.save = function(callback) {//存储用户信息
 User.get = function(name, callback){//读取用户信息
   //打开数据库
   mongodb.open(function(err, db){
-    if(err){
-      return callback(err);
-    }
+  
     //读取 users 集合
     db.collection('users', function(err, collection){
       if(err){
@@ -62,3 +60,4 @@ User.get = function(name, callback){//读取用户信息
     });
   });
 };
+

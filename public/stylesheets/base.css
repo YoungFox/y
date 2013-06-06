@@ -64,10 +64,11 @@ div .tagR a{float:right;}
 .user{height:62px;margin-top:20px;line-height:62px;display: block;float:left;}
 #myTab .floatRight{float:right;}
 #myTab{width:700px;}
-#userHomeTag{color:#fff;}
-#userHomeTag:hover,#userHomeTag:focus, .active #userHomeTag{
-	color:#6666FF;
+#userHomeTag,#myTab li a{color:#fff;}
+#userHomeTag:hover,#userHomeTag:focus, #myTab .active  a,#myTab li a:hover{
+	color:#0088CC;
 }
+
 
 .lastpage a{float:left;text-decoration:none;padding:.5em 1em;color:#ff0000;font-weight:bold;}
 .nextpage a{float:right;text-decoration:none;padding:.5em 1em;color:#ff0000;font-weight:bold;}

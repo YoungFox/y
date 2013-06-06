@@ -25,8 +25,8 @@ Comment.prototype.save = function(callback) {
       }
       //通过用户名、发表日期及标题查找文档，并把一条留言添加到该文档的 comments 数组里
       // console.log(name);
-      collection.findAndModify({"name":name}
-      , []
+      collection.findAndModify({"name":name,"time.day":day,"title":title}
+      ,[ ['time',-1] ]
       , {$push:{"comments":comment}}
       , {new: true}
       , function (err,comment) {

@@ -11,6 +11,9 @@ input, textarea, .uneditable-input {
     width: auto;
 }
 textarea{resize:none;}
+.publish pre{width:560px;}
+#content{width:560px;height:80px;}
+pre{width:480px;}
 .fr{float:right;}
 .globalHeader{height:112px;}
 .gh{height: 82px;margin-bottom: 30px;background:#022540;}
@@ -25,7 +28,7 @@ div .article{background:#fff;border-radius: 3px;}
 .artUser a{color: #b4b4b4;}
 .artTitle{padding:10px 20px;color: #444;width:500px;font-size: 16px;}
 .artTitle a{color:#444;}
-.artC{padding:0 20px 20px;width:500px;}
+.artC{padding:0 20px 20px;width:500px;color:#555;}
 div .tagR{float:right;width:210px;}
 div .tagR a{float:right;}
 .tagBt{margin-right:10px;}
@@ -35,14 +38,14 @@ div .tagR a{float:right;}
 .reBts1{border-radius: 3px;}
 .reBts button{padding:11px 25px;width:120px;font-weight:bold;}
 .pLeft{float:left;}
-.pRight{margin-left:14px;}
+.pRight{margin-left:12px;}
 .introT{font-size: 20px;font-weight: bold;}
 .introTitle{width: 248px;padding:4px 0;}
 .intro{width:250px;margin:0;background: #fff;border-radius: 4px;}
 .intro p{margin:10px 10px 0;}
 .intro ul{margin:0;}
 .regBt{background: #0088CC;}
-.logo{display:block;height:82px;width:137px;background: url('../img/logo.png');float:left;}
+.logo{display:block;height:82px;width:137px;background: url('http://bcs.duapp.com/yblog-resource/logo.png?sign=MBO:F3bcb9891e10cafb28a690414df83915:oDC5mBVwFL0egrknelI9m3MuQho%3D');float:left;}
 .contentTabs{float:right;margin:44px 0 0 ;border-bottom:none;}
 .col{width:310px;height:470px;position:relative;float:left;}
 .col0{margin:0 10px;}
@@ -67,6 +70,7 @@ div .tagR a{float:right;}
 #userHomeTag,#myTab li a{color:#fff;}
 #userHomeTag:hover,#userHomeTag:focus, #myTab .active  a,#myTab li a:hover{
 	color:#0088CC;
+	background:#DCEAF4;
 }
 
 
@@ -103,18 +107,19 @@ textarea.articleContent{height:200px;}
 .friLink ul{margin-left:0px;}
 li.rightLink{margin-left:50px;}
 .friLink  p{text-align:center;}
-.friLink a img{display:block;}
+.friLink a img{display:block;border-radius: 4px;}
 .friLink a{text-align:center;font-size: 12px;}
 .tagsWrap{margin:20px;}
 .pageShift{float:right;font-size:12px;}
 .publishBt{width:620px;height:140px;margin-top:20px; }
-.publishBt ul{margin:0;margin-left:2px;width:618px;height:140px;list-style: none;padding:0;background: url(../img/bg_shadow.png) 0 115px no-repeat;}
+.publishBt ul{margin:0;margin-left:2px;width:618px;height:140px;list-style: none;padding:0;background: url("http://bcs.duapp.com/yblog-resource/bg_shadow.png?sign=MBO:F3bcb9891e10cafb28a690414df83915:xTU5Kj7YiVbYJzi7AggnwCK4pk0%3D") 0 115px no-repeat;}
 .publishBt ul li{width:153px;height:114px;background:#fff;float:left;list-style: none;border-right:1px dotted #ccc;}
 .publishBt ul li:hover{background: #efe;}
 div.publishSection{min-height:400px;background: url("data:image/gif;base64,R0lGODlhKAAoALMAAO7s7fv5+vr4+e/t7vPx8vLw8fDu7/Xz9Pj29/n3+PTy8/b09ff19vHv8AAAAAAAACH5BAAAAAAALAAAAAAoACgAAAT/sCh0ThpqAJbKTciCJESyMM1iEEPSGEvBGQVSAE1DCLlHMIXFYsCANQ5CA4XQUBhgJEPnMEAwQgrCAaFQFBsMgEBAQGgPjBKy0DAlDMUCerE7oqAVGcJQmTStRC1oA3BlCm0HhwkHAlc5VTI8eWlNL3IMAz+JBAAKbGwLVAoWIkChBw0DbBMJb1wVW181IEw8GQUGAHQdCi48rQsZQyY9XaGaiQsXNToEyocHBgJCYsFHbQ0IOhYwGdFDXaodNqqpHRco2ldCHEyZYE90NI9zOCrYDNM1WiB62UNVsnhisKVJNC8sQhxJMGqAnWxFXLzBpGRIAxmtCGTBUaBRjSoh/xCILPAjGJoLPwqQ5HBoT7ByxJQ461JG2ZFeTFLAycZFGQAXXVZwYKgL2Co3BzomVSDgQpMT0bRpQ2JFAok9zZQlIFihSRAgWToYSEHkHxoEYvgQGMuBAhFgOWoSWxSAC4NRW5yIoBNqyAoJDGKIPaCRASY2HO6KzKfFiQ6PLkPQcgIIRYcyInWMSrJWyUJMPVusCIZJUTQkTpQMwODN1YJsJACOGItE1YCkjTJVuAIDQNITezSCSCNChp4yN60wFElnD5FXNVAoCKbNiQwnhN5MYOmJNkkwQKIFtjsdiEMhYU8QYyMlRjYPAaa0DGygCzwTcDzY0HJkD8kqBHigQP8ncGgDhUo6qANOEKPgtEl6o1AQAhqpUKHEd6AY8ZqEbGQjxQZOFEGQBytUwZIUN20FxhGJHBIKQ0yNxpU2R1wXgxAFZCKAN6/h4AlJa4ExghMoacMEB1F1U4USh7yXhkYUuJAIMShMyccoO4aSIx+GWTCdC0Bw4EEKFjAWwgBCgPFGHmY0MZYMFqGyUVI08LFAJ8qwgKJhLKnwRBsD4XJbCS45o2V4XrTHBx8moAdDETswsagpDFVwQg6WDEXFAk3dEU5SQUwTzDFCMFRTGyR5EuB1oCQAgF1R3PXCIlIgmI4FfwSmg2YvdfFkNESgsGOOMYQh4RMWvgYpGKoksRiKmpI1QMZroYrj4ggwZhGgLuK9UAEBa6kiDSpA1OfDdAKMNZYLQ7hnGI2vbXGCDA4ZEgIdTUxQpg7iakOCRp1QsUc+q8mAIiEqGNxlU2OCK1UOw7hagwygoXCbnVzmhwlDRcABAJppRBcNGOI1wkdIUJLUVDP1/YSSEm22woi2aORUhgHPeRFYPxEAADs=") repeat fixed left top transparent;}
 .publishBt ul li a{display: block;width:153px;height:114px;}
-.publishBt ul li a div{background: url(../img/spr_ico.png);height: 60px;margin: 30px 51px 0;width: 50px;}
+.publishBt ul li a div{background: url("http://bcs.duapp.com/yblog-resource/spr_ico.png?sign=MBO:F3bcb9891e10cafb28a690414df83915:3tWm3vd51LlebFVAMygl0qf3at8%3D");height: 60px;margin: 30px 51px 0;width: 50px;}
 .publishBt ul li a div.pLink1{background-position: -90px 0;}
 .publishBt ul li a div.pLink2{background-position: 0 0;}
 .publishBt ul li a div.pLink3{background-position: -90px -90px;}
 .publishBt ul li a div.pLink4{background-position: 0px -90px;}
+.publish .contentList{ border-bottom: 1px dotted;margin: 20px 20px 20px 0;}

@@ -122,4 +122,4 @@ div.publishSection{min-height:400px;background: url("data:image/gif;base64,R0lGO
 .publishBt ul li a div.pLink2{background-position: 0 0;}
 .publishBt ul li a div.pLink3{background-position: -90px -90px;}
 .publishBt ul li a div.pLink4{background-position: 0px -90px;}
-.publish .contentList{ border-bottom: 1px dotted;margin: 20px 20px 20px 0;}
+.publish .contentList,.myArticle .artList{ border-bottom: 1px dotted;margin: 20px}

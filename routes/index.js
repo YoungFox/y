@@ -18,7 +18,7 @@ module.exports = function(app){
     if(err){
       posts = [];
     } 
-    console.log(req.session.user);
+    // console.log(req.session.user);
     res.render('index',{
       title: '主页',
       user: req.session.user,
@@ -39,6 +39,35 @@ module.exports = function(app){
       error: req.flash('error').toString()
   });
   });
+
+app.get('/myarticle',checkLogin);
+ app.get('/myarticle',function(req,res){
+   var page = req.query.p?parseInt(req.query.p):1;
+  //检查用户是否存在
+  User.get(req.session.user.name, function(err, user){
+    if(!user){
+      req.flash('error','用户不存在!'); 
+      return res.redirect('/');
+    }
+    //查询并返回该用户第 page 页的10篇文章
+    Post.getTen(req.session.user.name, page, function(err, posts){
+      if(err){
+        req.flash('error',err); 
+        return res.redirect('/');
+      } 
+      res.send({
+        title: user.name,
+        posts: posts,
+        page: page,
+        postsLen: posts.length,
+        user : req.session.user,
+        success : req.flash('success').toString(),
+        error : req.flash('error').toString()
+      });
+    });
+  }); 
+  });
+
   app.post('/reg',checkNotLogin);
   app.post('/reg', function(req,res){
   var name = req.body.username,

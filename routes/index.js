@@ -18,7 +18,6 @@ module.exports = function(app){
     if(err){
       posts = [];
     } 
-    // console.log(req.session.user);
     res.render('index',{
       title: '主页',
       user: req.session.user,
@@ -306,8 +305,6 @@ app.post('/u/:name/:day/:title', function(req,res){
 // app.all('*', function(req,res){
 //   res.render("404");
 // });
-
-
 };
 
 

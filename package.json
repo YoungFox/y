@@ -1,9 +1,9 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
+  "name": "yblog",
+  "version": "1.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+  "start": "node app.js"
   },
   "dependencies": {
     "express": "3.1.1",

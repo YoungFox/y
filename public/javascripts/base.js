@@ -20,7 +20,7 @@ function isEmail(strEmail) {
 	}
 }
 
-
+//
 var winUiList = $('.winUiContent .col').find('div');
 for (var i = 0; i < winUiList.length; i++) {
 	var randomColor = parseInt(Math.random() * 256);

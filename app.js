@@ -20,6 +20,8 @@ app.set('view engine', 'ejs');
 app.use(flash());
 app.use(express.favicon(__dirname + '/public/img/fav.ico'));
 app.use(express.logger('dev'));
+//test branch
+app.use(express.compress());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser());

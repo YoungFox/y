@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.css' />
-    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
-    <link rel='stylesheet' href='/stylesheets/base.css' />
-    <link rel="stylesheet" href="stylesheets/themes/default.css" type="text/css" media="screen" /> 
-    <link rel="stylesheet" href="stylesheets/nivo-slider.css" type="text/css" media="screen" />
-    <!-- <link href="stylesheets/kissy/base.css" rel="stylesheet"/> -->
-    <link rel="stylesheet" href="stylesheets/kissy/demo.css" type="text/css" media="all"/>
-    <link href="stylesheets/kissy/custombutton.css" rel="stylesheet"/>
+	<title><%= title %></title>
+	<link rel='stylesheet' href='/stylesheets/bootstrap-responsive.css' />
+	<link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+	<link rel='stylesheet' href='/stylesheets/base.css' />
+	<link rel="stylesheet" href="stylesheets/themes/default.css" type="text/css" media="screen" /> 
+	<link rel="stylesheet" href="stylesheets/nivo-slider.css" type="text/css" media="screen" />
+	<!-- <link href="stylesheets/kissy/base.css" rel="stylesheet"/> -->
+	<link rel="stylesheet" href="stylesheets/kissy/demo.css" type="text/css" media="all"/>
+	<link href="stylesheets/kissy/custombutton.css" rel="stylesheet"/>
   </head>
   <body>
 				
-  	<div class='contentWrap'>
+	<div class='contentWrap'>
 		  <div class="row-fluid globalHeader">
-		  	<div class="span12 gh">
-		  		<div class="container ">
-		  			<a class='logo' href='/'></a>
-		  			
-	  			  	<ul class="nav nav-tabs contentTabs" id="myTab">
-	  			  		  <% if (locals.user) { %>
-	  			  		       <li><a id="userHomeTag" href="#userhome"><%= user.name%></a></li>
+			<div class="span12 gh">
+				<div class="container ">
+					<a class='logo' href='/'></a>
+					
+					<ul class="nav nav-tabs contentTabs" id="myTab">
+						  <% if (locals.user) { %>
+							   <li><a id="userHomeTag" href="#userhome"><%= user.name%></a></li>
 						  <% } %>
 						  <li class="floatRight"><a href="#messages"><!-- 发现 -->瀑布</a></li>
 						  <li class="floatRight"><a href="#profile">精选</a></li>
@@ -29,229 +29,229 @@
 						  
 					 <!--  <li><a href="#settings"></a></li> -->
 					</ul>
-		  		</div>
-		  	</div>
+				</div>
+			</div>
 		  </div>
 		  <div class="container">
-		             <% if (locals.success) { %>
-			       <div class="alert alert-success">
-			          <%= success %>
-			       </div>
+					 <% if (locals.success) { %>
+				   <div class="alert alert-success">
+					  <%= success %>
+				   </div>
 			<% } %>
 			<% if (locals.error) { %>
-			          <div class="alert alert-error">
-			            <%= error %>
-			          </div>
+					  <div class="alert alert-error">
+						<%= error %>
+					  </div>
 			 <% } %>
-		  	<div class="tab-content" >
+			<div class="tab-content" >
 
-		  	 <div class="tab-pane" id="userhome">
-			  	<div class="row cont" >
+			 <div class="tab-pane" id="userhome">
+				<div class="row cont" >
 				  <div class="span8 publishSection" >
-				  	<div class="publishBt">
-				  		<ul>
-				  			<li class='btList'><a class='' href='/post'><div class='pLink1'></div></a></li>
-				  			<li class='btList'><a class='' href=''><div class='pLink2'></div></a></li>
-				  			<li class='btList'><a class='' href=''><div class='pLink3'></div></a></li>
-				  			<li class='btList' style="border-right:none;"><a class='' href=''><div class='pLink4'></div></a></li>
-				  		</ul>
-				  	</div>
-				  	<div class='myArticle'>
-				  		
-				  	</div>
+					<div class="publishBt">
+						<ul>
+							<li class='btList'><a class='' href='/post'><div class='pLink1'></div></a></li>
+							<li class='btList'><a class='' href=''><div class='pLink2'></div></a></li>
+							<li class='btList'><a class='' href=''><div class='pLink3'></div></a></li>
+							<li class='btList' style="border-right:none;"><a class='' href=''><div class='pLink4'></div></a></li>
+						</ul>
+					</div>
+					<div class='myArticle'>
+						
+					</div>
 				  </div>
 				  <div class="span4">
-				  	<div class="row">
-				  		<div class="span4 reBts reBts1">
-				  			<% if(locals.user){ %>
-				  			<a href='/post' class="loginBt btn btn-large pLeft bts" >发表</a>
-				  			<a href='/logout' class="regBt btn btn-info  btn-large pRight bts" >退出</a>
-				  			<%}else{%>
-				  			<a class="loginBt btn btn-large pLeft bts"  href='/login' >登录</a>
-				  			<a href='/reg' class="regBt btn btn-info  btn-large pRight bts" type="button">注册</a>
-				  			<% } %>
-				  		</div>
-				  		<div class="span4 reBts2 searchInput">
-					  		<form class="form-search" action='/search' method='GET'>
+					<div class="row">
+						<div class="span4 reBts reBts1">
+							<% if(locals.user){ %>
+							<a href='/post' class="loginBt btn btn-large pLeft bts" >发表</a>
+							<a href='/logout' class="regBt btn btn-info  btn-large pRight bts" >退出</a>
+							<%}else{%>
+							<a class="loginBt btn btn-large pLeft bts"  href='/login' >登录</a>
+							<a href='/reg' class="regBt btn btn-info  btn-large pRight bts" type="button">注册</a>
+							<% } %>
+						</div>
+						<div class="span4 reBts2 searchInput">
+							<form class="form-search" action='/search' method='GET'>
 								  <div class="input-append">
-								    <input type="text" class="span2 search-query" name='keyword' >
-								    <button type="submit" class="btn">搜索</button>
+									<input type="text" class="span2 search-query" name='keyword' >
+									<button type="submit" class="btn">搜索</button>
 								  </div>
 							</form>
 						</div>
 
 						<div class="span4 reBts">
-				  			<div class="span4 intro">
-				  				   <ul class="nav nav-tabs nav-stacked tagList">  
-				  				    	    <li><a title="存档" href="/archive">所有文章</a></li>
-				  				    	    <li><a title="标签" href="/tags">标签列表</a></li>
-									    
-								    </ul>
+							<div class="span4 intro">
+								   <ul class="nav nav-tabs nav-stacked tagList">  
+											<li><a title="存档" href="/archive">所有文章</a></li>
+											<li><a title="标签" href="/tags">标签列表</a></li>
+										
+									</ul>
 
-				  			</div>
-				  		</div>
-				  		
-				  	</div>
+							</div>
+						</div>
+						
+					</div>
 				  </div>
 				</div>
 			  </div>
 
 			  <div class="tab-pane active" id="home">
-			  	<div class="row cont" >
+				<div class="row cont" >
 				  <div class="span8 cont">
 
-				  	<% posts.forEach(function(post, index){ %>
-				  		
-					  	<div class="row arti cont">
-					  		<div class="span1 headP"><a class="avatar" href="/u/<%= post.name %>"><img src="<%= post.head %>" class="" /></a></div>
-					  		<div class="span7 article">
-					  			
-						  			<div class="row">
-						  				<div class="span7 artUser"><a  href="/u/<%= post.name %>"><%= post.name %></a></div>
-						  				<div class="span7 artTitle"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></div>
-						  				<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC.jpg'></div>  -->
-						  				<div class="span7 artC"><%-post.post %></div>
-						  				<!-- <div class="span7 artC"><img width='500' height='333' src='img/testC1.jpg'></div>
-						  				<div class="span7 artC"><img width='250' height='167' src='img/testC2.jpg'><img width='250' height='167' src='img/testC2.jpg'></div> -->
-						  				<div class="span7 artC"><img width='500' height='750' src='img/testC3.jpg'></div>
-						  				<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC4.jpg'></div> -->
-						  				<div class="span7 artC">
-						  					<div class="row">
-						  						<div class="span3">
-						  							  <% if(post.tags){post.tags.forEach(function(tag, index){ %>
-													    <% if(tag.tag){ %>
-													      <a class="btn btn-info btn-small tagBt" type="button"  href="/tags/<%= tag.tag %>">#<%= tag.tag %></a>
-													    <% } %>
+					<% posts.forEach(function(post, index){ %>
+						
+						<div class="row arti cont">
+							<div class="span1 headP"><a class="avatar" href="/u/<%= post.name %>"><img src="<%= post.head %>" class="" /></a></div>
+							<div class="span7 article">
+								
+									<div class="row">
+										<div class="span7 artUser"><a  href="/u/<%= post.name %>"><%= post.name %></a></div>
+										<div class="span7 artTitle"><a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>"><%= post.title %></a></div>
+										<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC.jpg'></div>  -->
+										<div class="span7 artC"><%-post.post %></div>
+										<!-- <div class="span7 artC"><img width='500' height='333' src='img/testC1.jpg'></div>
+										<div class="span7 artC"><img width='250' height='167' src='img/testC2.jpg'><img width='250' height='167' src='img/testC2.jpg'></div> -->
+										<div class="span7 artC"><img width='500' height='750' src='img/testC3.jpg'></div>
+										<!-- <div class="span7 artC"><img width='500' height='750' src='img/testC4.jpg'></div> -->
+										<div class="span7 artC">
+											<div class="row">
+												<div class="span3">
+													  <% if(post.tags){post.tags.forEach(function(tag, index){ %>
+														<% if(tag.tag){ %>
+														  <a class="btn btn-info btn-small tagBt" type="button"  href="/tags/<%= tag.tag %>">#<%= tag.tag %></a>
+														<% } %>
 													  <% }) }%>
 
 
-						  						</div>
-						  						<div class="span2 tagR">
-						  							<a class="btn btn-link btn-small tagLing artcleBt"><i class="icon-heart"></i></a>
-						  							<a class="btn btn-link btn-small tagLing artcleBt">转载</a>
-						  							<a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>" class="btn btn-link btn-small tagLing artcleBt">回应(<%= post.comments.length %>)</a>
-						  							<a class="btn btn-link btn-small tagLing artcleBt">热度(<%= post.pv %>)</a>
-						  						</div>
-						  					</div>
-						  				</div>
-						  			</div>
-						  		
-					  		</div>
-					  	</div>
-				  	<% }) %>
-				  	<%- include paging %>
+												</div>
+												<div class="span2 tagR">
+													<a class="btn btn-link btn-small tagLing artcleBt"><i class="icon-heart"></i></a>
+													<a class="btn btn-link btn-small tagLing artcleBt">转载</a>
+													<a href="/u/<%= post.name %>/<%= post.time.day %>/<%= post.title %>" class="btn btn-link btn-small tagLing artcleBt">回应(<%= post.comments.length %>)</a>
+													<a class="btn btn-link btn-small tagLing artcleBt">热度(<%= post.pv %>)</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+					<% }) %>
+					<%- include paging %>
 				  </div>
 				  <div class="span4">
-				  	<div class="row">
-				  		<div class="span4 reBts reBts1">
-				  			<% if(locals.user){ %>
-				  			<a href='/post' class="loginBt btn btn-large pLeft bts" >发表</a>
-				  			<a href='/logout' class="regBt btn btn-info  btn-large pRight bts" >退出</a>
-				  			<%}else{%>
-				  			<a class="loginBt btn btn-large pLeft bts"  href='/login' >登录</a>
-				  			<a href='/reg' class="regBt btn btn-info  btn-large pRight bts" type="button">注册</a>
-				  			<% } %>
-				  		</div>
-				  		<div class="span4 reBts2 searchInput">
-					  		<form class="form-search" action='/search' method='GET'>
+					<div class="row">
+						<div class="span4 reBts reBts1">
+							<% if(locals.user){ %>
+							<a href='/post' class="loginBt btn btn-large pLeft bts" >发表</a>
+							<a href='/logout' class="regBt btn btn-info  btn-large pRight bts" >退出</a>
+							<%}else{%>
+							<a class="loginBt btn btn-large pLeft bts"  href='/login' >登录</a>
+							<a href='/reg' class="regBt btn btn-info  btn-large pRight bts" type="button">注册</a>
+							<% } %>
+						</div>
+						<div class="span4 reBts2 searchInput">
+							<form class="form-search" action='/search' method='GET'>
 								  <div class="input-append">
-								    <input type="text" class="span2 search-query" name='keyword' >
-								    <button type="submit" class="btn">搜索</button>
+									<input type="text" class="span2 search-query" name='keyword' >
+									<button type="submit" class="btn">搜索</button>
 								  </div>
 							</form>
 						</div>
-				  		<div class="span4 reBts">
-				  				<div class="span4 intro introT"><a class="btn  disabled btn-block">Yblog简介</a></div>
-				  				<div class="span3 intro">
-				  					<p>Yblog是基于node.js的轻博客系统</p>
-				  					<p>测试性产品，目前处于开发阶段</p>
-				  					<p>建议用IE9+、chrome、firefox等现代浏览器，以获得最佳效果</p>
-				  					<p>涉及的主要技术如下所示</p>
-				  					<a class="btn btn-link btn-small tagLing fr">by 杨文梁</a>
-				  				</div>
-				  		</div>
-				  		<div class="span4 reBts">
-				  			<div class="span4 intro">
-				  				   <ul class="nav nav-tabs nav-stacked tagList">  
-				  				    	    <li><a target="_blank" href="http://www.w3school.com.cn/">HTML</a></li>
-				  				    	    <li><a target="_blank" href="http://www.w3school.com.cn/">CSS</a></li>
-									    <li><a target="_blank" href="http://www.w3school.com.cn/">javascript</a></li>
-									    <li><a target="_blank" href="http://nodejs.org/">Node.js</a></li>
-									    <li><a target="_blank" href="http://expressjs.com/">express</a></li>
-									    <li><a target="_blank" href="http://jquery.com/">jQuery</a></li>
-									    <li><a target="_blank" href="http://mongodb.github.io/node-mongodb-native/">MongoDB</a></li>
-									    <li><a target="_blank" href="http://twitter.github.io/bootstrap/">Bootstrap</a></li>
-									    <li><a target="_blank" href="http://www.ituring.com.cn/article/23">Markdown</a></li>
-									    <li><a target="_blank" href="http://en.gravatar.com/">gravatar</a></li>
-								    </ul>
+						<div class="span4 reBts">
+								<div class="span4 intro introT"><a class="btn  disabled btn-block">Yblog简介</a></div>
+								<div class="span3 intro">
+									<p>Yblog是基于node.js的轻博客系统</p>
+									<p>测试性产品，目前处于开发阶段</p>
+									<p>建议用IE9+、chrome、firefox等现代浏览器，以获得最佳效果</p>
+									<p>涉及的主要技术如下所示</p>
+									<a class="btn btn-link btn-small tagLing fr">by 杨文梁</a>
+								</div>
+						</div>
+						<div class="span4 reBts">
+							<div class="span4 intro">
+								   <ul class="nav nav-tabs nav-stacked tagList">  
+											<li><a target="_blank" href="http://www.w3school.com.cn/">HTML</a></li>
+											<li><a target="_blank" href="http://www.w3school.com.cn/">CSS</a></li>
+										<li><a target="_blank" href="http://www.w3school.com.cn/">javascript</a></li>
+										<li><a target="_blank" href="http://nodejs.org/">Node.js</a></li>
+										<li><a target="_blank" href="http://expressjs.com/">express</a></li>
+										<li><a target="_blank" href="http://jquery.com/">jQuery</a></li>
+										<li><a target="_blank" href="http://mongodb.github.io/node-mongodb-native/">MongoDB</a></li>
+										<li><a target="_blank" href="http://twitter.github.io/bootstrap/">Bootstrap</a></li>
+										<li><a target="_blank" href="http://www.ituring.com.cn/article/23">Markdown</a></li>
+										<li><a target="_blank" href="http://en.gravatar.com/">gravatar</a></li>
+									</ul>
 
-				  			</div>
-				  		</div>
-				  		
-				  			<div class="span4 reBts friLink">
+							</div>
+						</div>
+						
+							<div class="span4 reBts friLink">
 							<p>友情链接</p>
-				  			<ul class="clearFix">
+							<ul class="clearFix">
 							  <li><a href="http://vscs.cri.cn"><img width="100" src='img/crilogo.gif' /><p>国际在线</p></a></li>
 							  <li class='rightLink'><a href="http://vscs.cri.cn"><img width="100" src='img/vscslogo.png' /><p>南海之声</p></a></li>
 							</ul>
-				  			</div>
-				  		
-				  	</div>
+							</div>
+						
+					</div>
 				  </div>
 				</div>
 			  </div>
 			  <div class="tab-pane" id="profile">
-			  	  <div class="slider-wrapper theme-default">
-				            <div id="slider" class="nivoSlider">
-					                <img src="img/001.png" data-thumb="img/toystory.jpg" alt="" />
-					                <img src="img/002.png" data-thumb="img/up.jpg" alt="" />
-					                <img src="img/003.png" data-thumb="img/walle.jpg" alt="" data-transition="slideInLeft" />
-					                <img src="img/004.png" data-thumb="img/nemo.jpg" alt="" title="#htmlcaption" />
-				            </div>
-				            <div id="htmlcaption" class="nivo-html-caption">
-				                <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
-				            </div>
-				        </div>
+				  <div class="slider-wrapper theme-default">
+							<div id="slider" class="nivoSlider">
+									<img src="img/001.png" data-thumb="img/toystory.jpg" alt="" />
+									<img src="img/002.png" data-thumb="img/up.jpg" alt="" />
+									<img src="img/003.png" data-thumb="img/walle.jpg" alt="" data-transition="slideInLeft" />
+									<img src="img/004.png" data-thumb="img/nemo.jpg" alt="" title="#htmlcaption" />
+							</div>
+							<div id="htmlcaption" class="nivo-html-caption">
+								<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+							</div>
+						</div>
 
-			  	<!-- <div class="winUiContent ">
+				<!-- <div class="winUiContent ">
 					  <div class="col">
-					  	<div class='size2 p01'><a href="###"><img src="/tmp/001.jpeg" /></a></div>
-					  	<div class='size1 p02'><a href="###"><img src="/tmp/3.jpeg" /></a>    </div>
-					  	<div class='size1 p04'><a href="###"><img src="/tmp/2.jpeg" /></a>    </div>
-					  	<div class='size3 p05'><a href="###"><img src="/tmp/01.jpeg" /></a>  </div>
+						<div class='size2 p01'><a href="###"><img src="/tmp/001.jpeg" /></a></div>
+						<div class='size1 p02'><a href="###"><img src="/tmp/3.jpeg" /></a>    </div>
+						<div class='size1 p04'><a href="###"><img src="/tmp/2.jpeg" /></a>    </div>
+						<div class='size3 p05'><a href="###"><img src="/tmp/01.jpeg" /></a>  </div>
 					  </div>
 					  <div class="col col0">
-					  	<div class='size3 p01'><a href="###"><img src="/tmp/02.jpeg" /></a></div>
-					  	<div class='size1 p03'><a href="###"><img src="/tmp/6.jpeg" /></a>   </div>
-					  	<div class='size1 p04'><a href="###"><img src="/tmp/1.jpeg" /></a>   </div>
-					  	<div class='size3 p05'><a href="###"><img src="/tmp/04.jpeg" /></a> </div>
+						<div class='size3 p01'><a href="###"><img src="/tmp/02.jpeg" /></a></div>
+						<div class='size1 p03'><a href="###"><img src="/tmp/6.jpeg" /></a>   </div>
+						<div class='size1 p04'><a href="###"><img src="/tmp/1.jpeg" /></a>   </div>
+						<div class='size3 p05'><a href="###"><img src="/tmp/04.jpeg" /></a> </div>
 					  </div>
 					  <div class="col">
-					  	<div class='size3 p01'><a href="###"><img src="/tmp/03.jpeg" /></a></div>
-					  	<div class='size2 p03'>  </div>
-					  	<div class='size1 p04'><a href="###"><img src="/tmp/8.jpg" /></a>   </div>
-					  	<div class='size1 p06'><a href="###"><img src="/tmp/9.jpg" /></a> </div>
+						<div class='size3 p01'><a href="###"><img src="/tmp/03.jpeg" /></a></div>
+						<div class='size2 p03'>  </div>
+						<div class='size1 p04'><a href="###"><img src="/tmp/8.jpg" /></a>   </div>
+						<div class='size1 p06'><a href="###"><img src="/tmp/9.jpg" /></a> </div>
 					  </div>
 				</div> -->
 
 				<div class="winUiContent ">
 					  <div class="col">
-					  	<div class='size2 p01'></div>
-					  	<div class='size1 p02'>    </div>
-					  	<div class='size1 p04'>    </div>
-					  	<div class='size3 p05'>   </div>
+						<div class='size2 p01'></div>
+						<div class='size1 p02'>    </div>
+						<div class='size1 p04'>    </div>
+						<div class='size3 p05'>   </div>
 					  </div>
 					  <div class="col col0">
-					  	<div class='size3 p01'></div>
-					  	<div class='size1 p03'>   </div>
-					  	<div class='size1 p04'>   </div>
-					  	<div class='size3 p05'> </div>
+						<div class='size3 p01'></div>
+						<div class='size1 p03'>   </div>
+						<div class='size1 p04'>   </div>
+						<div class='size3 p05'> </div>
 					  </div>
 					  <div class="col">
-					  	<div class='size3 p01'></div>
-					  	<div class='size2 p03'> </div>
-					  	<div class='size1 p04'>   </div>
-					  	<div class='size1 p06'> </div>
+						<div class='size3 p01'></div>
+						<div class='size2 p03'> </div>
+						<div class='size1 p04'>   </div>
+						<div class='size1 p06'> </div>
 					  </div>
 				</div>
 			  </div>
@@ -278,7 +278,7 @@
 			 <!--  <div class="tab-pane" id="userhome">.4.</div> -->
 			</div>
 			 
-		   	
+			
 		  </div>
 	</div>
 	<script type='text/javascript' src='javascripts/jquery-1.8.3.js'></script>
@@ -292,53 +292,53 @@
 	 <script  type='text/javascript' src="javascripts/base.js"></script>
 	<!-- // <script  type='text/javascript' src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js"></script> -->
 	<script>
-                (function (){
+				(function (){
 
-                        var flag = false;
-                        var pFlag = false;
-                        Wflag  = function (value){
-                            flag = value;
-                        }
-                        Wflag.prototype.getF = function (){
-                            return flag;
-                        }
-                        Wflag.prototype.setF = function (value){
-                            flag = value;
-                        }
+						var flag = false;
+						var pFlag = false;
+						Wflag  = function (value){
+							flag = value;
+						}
+						Wflag.prototype.getF = function (){
+							return flag;
+						}
+						Wflag.prototype.setF = function (value){
+							flag = value;
+						}
 
-                        Pflag  = function (value){
-                            pFlag = value;
-                        }
-                        Pflag.prototype.getP = function (){
-                            return pFlag;
-                        }
-                        Pflag.prototype.setP = function (value){
-                            pFlag = value;
-                        }
-                 })()
+						Pflag  = function (value){
+							pFlag = value;
+						}
+						Pflag.prototype.getP = function (){
+							return pFlag;
+						}
+						Pflag.prototype.setP = function (value){
+							pFlag = value;
+						}
+				 })()
 
-                 var    wflag = new Wflag(false);
-                 var pflag = new Pflag(false);
+				 var    wflag = new Wflag(false);
+				 var pflag = new Pflag(false);
 
-            	
-            	  $('#myTab a').click(function (e) {
-            	  e.preventDefault();
-            	  $(this).tab('show');
+				
+				  $('#myTab a').click(function (e) {
+				  e.preventDefault();
+				  $(this).tab('show');
 
-                           if($('#messages').css('display')!='none'&&!wflag.getF()){
-                                iniWaterfall();
-                                wflag.setF(true);       
-                                // $('#slider').data('nivoslider').stop();       
-                                // pflag.setP(false);                   
-                           }
-                            if($('#profile').css('display')!='none'&&!pflag.getP()){
-                               $('#slider').nivoSlider({
-		            	 effect: 'random'
-		      });
-                                // $('#slider').data('nivoslider').start();   
-                                pflag.setP(true);                            
-                           }
-            	})
+						   if($('#messages').css('display')!='none'&&!wflag.getF()){
+								iniWaterfall();
+								wflag.setF(true);       
+								// $('#slider').data('nivoslider').stop();       
+								// pflag.setP(false);                   
+						   }
+							if($('#profile').css('display')!='none'&&!pflag.getP()){
+							   $('#slider').nivoSlider({
+						 effect: 'random'
+			  });
+								// $('#slider').data('nivoslider').start();   
+								pflag.setP(true);                            
+						   }
+				})
 	</script>
   </body>
 </html>

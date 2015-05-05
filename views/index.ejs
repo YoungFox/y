@@ -5,11 +5,7 @@
 	<link rel='stylesheet' href='/stylesheets/bootstrap-responsive.css' />
 	<link rel='stylesheet' href='/stylesheets/bootstrap.css' />
 	<link rel='stylesheet' href='/stylesheets/base.css' />
-	<link rel="stylesheet" href="stylesheets/themes/default.css" type="text/css" media="screen" /> 
-	<link rel="stylesheet" href="stylesheets/nivo-slider.css" type="text/css" media="screen" />
-	<!-- <link href="stylesheets/kissy/base.css" rel="stylesheet"/> -->
-	<link rel="stylesheet" href="stylesheets/kissy/demo.css" type="text/css" media="all"/>
-	<link href="stylesheets/kissy/custombutton.css" rel="stylesheet"/>
+	<!-- <link rel="stylesheet" href="stylesheets/themes/default.css" type="text/css" media="screen" />  -->
   </head>
   <body>
 				
@@ -23,11 +19,9 @@
 						  <% if (locals.user) { %>
 							   <li><a id="userHomeTag" href="#userhome"><%= user.name%></a></li>
 						  <% } %>
-						  <li class="floatRight"><a href="#messages"><!-- 发现 -->瀑布</a></li>
-						  <li class="floatRight"><a href="#profile">精选</a></li>
+						  <!-- <li class="floatRight"><a href="#messages">瀑布</a></li>
+						  <li class="floatRight"><a href="#profile">精选</a></li> -->
 						  <li class="active floatRight"><a href="#home">浏览</a></li>
-						  
-					 <!--  <li><a href="#settings"></a></li> -->
 					</ul>
 				</div>
 			</div>
@@ -200,7 +194,7 @@
 				  </div>
 				</div>
 			  </div>
-			  <div class="tab-pane" id="profile">
+			 <!--  <div class="tab-pane" id="profile">
 				  <div class="slider-wrapper theme-default">
 							<div id="slider" class="nivoSlider">
 									<img src="img/001.png" data-thumb="img/toystory.jpg" alt="" />
@@ -212,27 +206,6 @@
 								<strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
 							</div>
 						</div>
-
-				<!-- <div class="winUiContent ">
-					  <div class="col">
-						<div class='size2 p01'><a href="###"><img src="/tmp/001.jpeg" /></a></div>
-						<div class='size1 p02'><a href="###"><img src="/tmp/3.jpeg" /></a>    </div>
-						<div class='size1 p04'><a href="###"><img src="/tmp/2.jpeg" /></a>    </div>
-						<div class='size3 p05'><a href="###"><img src="/tmp/01.jpeg" /></a>  </div>
-					  </div>
-					  <div class="col col0">
-						<div class='size3 p01'><a href="###"><img src="/tmp/02.jpeg" /></a></div>
-						<div class='size1 p03'><a href="###"><img src="/tmp/6.jpeg" /></a>   </div>
-						<div class='size1 p04'><a href="###"><img src="/tmp/1.jpeg" /></a>   </div>
-						<div class='size3 p05'><a href="###"><img src="/tmp/04.jpeg" /></a> </div>
-					  </div>
-					  <div class="col">
-						<div class='size3 p01'><a href="###"><img src="/tmp/03.jpeg" /></a></div>
-						<div class='size2 p03'>  </div>
-						<div class='size1 p04'><a href="###"><img src="/tmp/8.jpg" /></a>   </div>
-						<div class='size1 p06'><a href="###"><img src="/tmp/9.jpg" /></a> </div>
-					  </div>
-				</div> -->
 
 				<div class="winUiContent ">
 					  <div class="col">
@@ -257,87 +230,54 @@
 			  </div>
 			  <div class="tab-pane" id="messages">
 							 <div id="wrapper">
-						<!-- <div id="button_container"></div> -->
-
 						<div id="article">
 							<div id="ColumnContainer"></div>
 							<a id="BackToTop" href="#">返回顶部</a>
 							<div id="loadingPins"><img src="img/T1Ar9xXg0JXXXXXXXX-16-16.gif" alt="Pin Loader Image"/><span>加载中&hellip;</span></div>
 						</div>
 					</div>
-					<script type="tpl" id="tpl">
-						<div class="pin ks-waterfall" data-id="{id}">
-							<a href="#" class="image">
-								<img height="{height}" style='height:{height}px'  alt="{title}" src="http://farm{farm}.static.flickr.com/{server}/{id}_{secret}_m.jpg"/>
-							</a>
-							<p class="description">{title}</p>
-							
-						</div>
-					</script>
-
-			 <!--  <div class="tab-pane" id="userhome">.4.</div> -->
 			</div>
-			 
+			  -->
 			
 		  </div>
 	</div>
 	<script type='text/javascript' src='javascripts/jquery-1.8.3.js'></script>
 	<script type='text/javascript' src='javascripts/bootstrap.js'></script>
-	<script type="text/javascript" src="javascripts/jquery.nivo.slider.js"></script>
-	<script  type='text/javascript' src="javascripts/build/seed.js"></script>	
-	<script  type='text/javascript' src="javascripts/kissy/base.js"></script>
-	 <script  type='text/javascript' src="javascripts/kissy/loader.js"></script>
-	 <script  type='text/javascript' src="javascripts/kissy/waterfall.js"></script>
-	 <script  type='text/javascript' src="javascripts/kissy/wf.js"></script>
-	 <script  type='text/javascript' src="javascripts/base.js"></script>
+	<script  type='text/javascript' src="javascripts/base.js"></script>
 	<!-- // <script  type='text/javascript' src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js"></script> -->
 	<script>
-				(function (){
+				(function() {
 
-						var flag = false;
-						var pFlag = false;
-						Wflag  = function (value){
-							flag = value;
-						}
-						Wflag.prototype.getF = function (){
-							return flag;
-						}
-						Wflag.prototype.setF = function (value){
-							flag = value;
-						}
+					var flag = false;
+					var pFlag = false;
+					Wflag = function(value) {
+						flag = value;
+					}
+					Wflag.prototype.getF = function() {
+						return flag;
+					}
+					Wflag.prototype.setF = function(value) {
+						flag = value;
+					}
 
-						Pflag  = function (value){
-							pFlag = value;
-						}
-						Pflag.prototype.getP = function (){
-							return pFlag;
-						}
-						Pflag.prototype.setP = function (value){
-							pFlag = value;
-						}
-				 })()
+					Pflag = function(value) {
+						pFlag = value;
+					}
+					Pflag.prototype.getP = function() {
+						return pFlag;
+					}
+					Pflag.prototype.setP = function(value) {
+						pFlag = value;
+					}
+				})()
 
-				 var    wflag = new Wflag(false);
-				 var pflag = new Pflag(false);
+				var wflag = new Wflag(false);
+				var pflag = new Pflag(false);
 
-				
-				  $('#myTab a').click(function (e) {
-				  e.preventDefault();
-				  $(this).tab('show');
 
-						   if($('#messages').css('display')!='none'&&!wflag.getF()){
-								iniWaterfall();
-								wflag.setF(true);       
-								// $('#slider').data('nivoslider').stop();       
-								// pflag.setP(false);                   
-						   }
-							if($('#profile').css('display')!='none'&&!pflag.getP()){
-							   $('#slider').nivoSlider({
-						 effect: 'random'
-			  });
-								// $('#slider').data('nivoslider').start();   
-								pflag.setP(true);                            
-						   }
+				$('#myTab a').click(function(e) {
+					e.preventDefault();
+					$(this).tab('show');
 				})
 	</script>
   </body>
